@@ -34,3 +34,30 @@ document.getElementById("orderForm").addEventListener("submit", function (e) {
         }
     }, 1000);
 });
+
+document.getElementById("orderForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const item = document.getElementById("item").value;
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const phone = document.getElementById("phone").value;
+
+  const subject = encodeURIComponent("New Order from " + name);
+  const body = encodeURIComponent(
+    `Order Details:\n\nItem: ${item}\nName: ${name}\nEmail: ${email}\nPhone: ${phone}`
+  );
+
+  const mailtoLink = `mailto:newtonsbroilers@gmail.com?subject=${subject}&body=${body}`;
+
+  // Try to open the default mail app (Gmail or other)
+  window.location.href = mailtoLink;
+
+  // Fallback alert for mobile users in case nothing happens
+  setTimeout(() => {
+    if (!navigator.userAgent.includes("Mac") && !navigator.userAgent.includes("Windows")) {
+      alert("If the email app did not open, please copy your order details and email us at: newtonsbroilers@gmail.com");
+    }
+  }, 1500);
+});
+
