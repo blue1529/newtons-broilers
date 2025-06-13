@@ -1,0 +1,43 @@
+<!-- order.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="css/order.css">
+    <title>Place Your Order</title>
+</head>
+<body>
+    <header>
+        <img id="icon" src="imgs/Icon1.png" alt="logo">
+    <h1><strong>Newton's Fresh Poultry</strong></h1>
+    </header>
+<h1>Order Form</h1>
+
+<form id="orderForm">
+    <label for="item">Item:</label><br />
+    <input type="text" id="item" name="item" readonly><br /><br />
+
+    <label for="quantity">Quantity</label><br />
+    <input type="number" id="quantity" name="quantity"><br /><br />
+
+    
+    <label for="name">Your Name:</label><br />
+    <input type="text" id="name" name="name" required><br /><br />
+
+    <label for="email">Your Email:</label><br />
+    <input type="email" id="email" name="email" placeholder="myname@gmail.com" required><br /><br />
+    
+    
+    <label for="phone">Phone Number:</label><br />
+    <input type="tel" id="phone" name="phone" required placeholder="991738290"><br /><br />
+    
+    <button type="submit">Submit Order</button>
+    <p><strong>Note:</strong>Make sure your device is signed in to gmail with the email account you have submitted</p>
+    <a id="back" href="index.html">← Back to Products</a>
+</form>
+
+<script src="autofill.js"></script>
+<script src="submitOrder.js"></script>
+</body>
+</html>
