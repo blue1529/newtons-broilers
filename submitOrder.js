@@ -12,7 +12,7 @@ document.querySelector("form").addEventListener("submit", function (e) {
         `Item: ${item}\nQuantity: ${quantity}\nName: ${name}\nEmail: ${email}\nPhone: ${phone}`
     );
 
-    const mailtoLink = `mailto:newtonorders@example.com?subject=${subject}&body=${body}`;
+    const mailtoLink = `mailto:newtonsbroilers@gmail.com?subject=${subject}&body=${body}`;
 
     // Attempt to open default email client
     const opened = window.open(mailtoLink);
