@@ -20,7 +20,7 @@ document.querySelector("form").addEventListener("submit", function (e) {
     // Fallback to Gmail if the email client didn't open
     setTimeout(() => {
         if (!opened || opened.closed || typeof opened.closed === "undefined") {
-            const gmailURL = `https://mail.google.com/mail/?view=cm&fs=1&to=newtonorders@example.com&su=${subject}&body=${body}`;
+            const gmailURL = `https://mail.google.com/mail/?view=cm&fs=1&to=newtonsbroilers@gmail.com&su=${subject}&body=${body}`;
             window.open(gmailURL, "_blank");
             alert("If your email app didn't open, we've opened Gmail in a new tab. Please send the message manually.");
         }
