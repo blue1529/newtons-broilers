@@ -1,63 +1,28 @@
-document.getElementById("orderForm").addEventListener("submit", function (e) {
-    e.preventDefault();
+document.querySelector("form").addEventListener("submit", function (e) {
+    e.preventDefault(); // Prevent default form submission
 
     const item = document.getElementById("item").value;
-    const quantity = document.getElementById("quantity").value;
+    const quantity = document.getElementById("quantity")?.value || "Not specified";
     const name = document.getElementById("name").value;
     const email = document.getElementById("email").value;
     const phone = document.getElementById("phone").value;
 
-    const subject = encodeURIComponent("Order from Newton's Fresh Poultry");
+    const subject = encodeURIComponent("New Order from " + name);
     const body = encodeURIComponent(
-        `Hello,\n\nI'd like to place an order for:\n\n` +
-        `Item: ${item}\nQuantity: ${quantity}\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\n\n` +
-        `Please confirm receipt. Thank you.`
+        `Item: ${item}\nQuantity: ${quantity}\nName: ${name}\nEmail: ${email}\nPhone: ${phone}`
     );
 
-    const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=newtonsbroilers@gmail.com&su=${subject}&body=${body}`;
+    const mailtoLink = `mailto:newtonorders@example.com?subject=${subject}&body=${body}`;
 
-    // Try opening Gmail in a new tab
-    const gmailWindow = window.open(gmailUrl, '_blank');
+    // Attempt to open default email client
+    const opened = window.open(mailtoLink);
 
-    // Fallback: use mailto if Gmail tab fails to open
+    // Fallback to Gmail if the email client didn't open
     setTimeout(() => {
-        if (!gmailWindow || gmailWindow.closed || typeof gmailWindow.closed === 'undefined') {
-            const fallbackMailto = `mailto:newtonsbroilers@gmail.com?subject=${subject}&body=${body}`;
-            const fallbackWindow = window.open(fallbackMailto, '_self');
-
-            // Final fallback: alert the user
-            setTimeout(() => {
-                if (!fallbackWindow || fallbackWindow.closed || typeof fallbackWindow.closed === 'undefined') {
-                    alert("We couldn't open your email client. Please send your order manually to newtonsbroilers@gmail.com.");
-                }
-            }, 1000);
+        if (!opened || opened.closed || typeof opened.closed === "undefined") {
+            const gmailURL = `https://mail.google.com/mail/?view=cm&fs=1&to=newtonorders@example.com&su=${subject}&body=${body}`;
+            window.open(gmailURL, "_blank");
+            alert("If your email app didn't open, we've opened Gmail in a new tab. Please send the message manually.");
         }
-    }, 1000);
+    }, 800);
 });
-
-document.getElementById("orderForm").addEventListener("submit", function(e) {
-  e.preventDefault();
-
-  const item = document.getElementById("item").value;
-  const name = document.getElementById("name").value;
-  const email = document.getElementById("email").value;
-  const phone = document.getElementById("phone").value;
-
-  const subject = encodeURIComponent("New Order from " + name);
-  const body = encodeURIComponent(
-    `Order Details:\n\nItem: ${item}\nName: ${name}\nEmail: ${email}\nPhone: ${phone}`
-  );
-
-  const mailtoLink = `mailto:newtonsbroilers@gmail.com?subject=${subject}&body=${body}`;
-
-  // Try to open the default mail app (Gmail or other)
-  window.location.href = mailtoLink;
-
-  // Fallback alert for mobile users in case nothing happens
-  setTimeout(() => {
-    if (!navigator.userAgent.includes("Mac") && !navigator.userAgent.includes("Windows")) {
-      alert("If the email app did not open, please copy your order details and email us at: newtonsbroilers@gmail.com");
-    }
-  }, 1500);
-});
-
