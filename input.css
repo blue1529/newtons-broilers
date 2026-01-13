@@ -1,0 +1,49 @@
+/* input.css */
+@import "tailwindcss";
+@import "tailwindcss/theme.css" layer(theme);
+
+/* Add your custom theme */
+@theme {
+  --color-primary: #2d8c3c;
+  --color-primary-light: #e8f5e9;
+  --color-primary-dark: #1e6b2c;
+  --color-secondary: #ff9900;
+  --color-secondary-light: #fff3e0;
+  --color-accent: #8b4513;
+
+  --font-poppins: "Poppins", sans-serif;
+  --font-opensans: "Open Sans", sans-serif;
+
+  --animate-fade-in: fadeIn 0.8s ease-in-out;
+  --animate-slide-up: slideUp 0.5s ease-out;
+  --animate-pulse-slow: pulse 3s infinite;
+}
+
+/* Add custom keyframes */
+@theme {
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
+
+/* Add custom font families */
+@theme {
+  --font-family-poppins: var(--font-poppins);
+  --font-family-opensans: var(--font-opensans);
+}

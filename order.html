@@ -1,43 +1,710 @@
-<!-- order.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="css/order.css">
-    <title>Place Your Order</title>
+    <title>Place Your Order | Newton's Fresh Poultry</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐔</text></svg>" type="image/svg+xml">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2d8c3c',
+                        'primary-light': '#e8f5e9',
+                        'primary-dark': '#1e6b2c',
+                        secondary: '#ff9900',
+                        'secondary-light': '#fff3e0',
+                        accent: '#8b4513',
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'opensans': ['Open Sans', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.8s ease-in-out',
+                        'slide-up': 'slideUp 0.5s ease-out',
+                        'pulse-slow': 'pulse 3s infinite',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .order-bg {
+            background: linear-gradient(135deg, #f9f9f9 0%, #e8f5e9 100%);
+        }
+        
+        .form-card {
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .form-card:hover {
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
+        }
+        
+        .form-input:focus {
+            box-shadow: 0 0 0 3px rgba(45, 140, 60, 0.2);
+        }
+        
+        .gmail-btn {
+            background: linear-gradient(to right, #EA4335, #D14836);
+        }
+        
+        .gmail-btn:hover {
+            background: linear-gradient(to right, #D14836, #C53727);
+        }
+        
+        .whatsapp-btn {
+            background: linear-gradient(to right, #25D366, #128C7E);
+        }
+        
+        .whatsapp-btn:hover {
+            background: linear-gradient(to right, #1DA851, #075E54);
+        }
+        
+        .back-btn {
+            background: linear-gradient(to right, #6c757d, #5a6268);
+        }
+        
+        .back-btn:hover {
+            background: linear-gradient(to right, #5a6268, #495057);
+        }
+        
+        .price-tag {
+            background: linear-gradient(135deg, #2d8c3c, #1e6b2c);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            display: inline-block;
+        }
+    </style>
 </head>
-<body>
-    <header>
-        <img id="icon" src="imgs/Icon1.png" alt="logo">
-    <h1><strong>Newton's Fresh Poultry</strong></h1>
+<body class="font-opensans order-bg min-h-screen">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto pl-2 pr-16 py-4">
+            <div class="flex flex-col md:flex-row justify-between items-start">
+                <!-- Logo and Brand -->
+                <div class="flex items-center space-x-3 mb-4 md:mb-0">
+                    <div class="bg-primary-light p-3 rounded-full">
+                        <i class="fas fa-egg text-primary text-2xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="font-poppins text-2xl font-bold text-gray-800">Newton's Fresh Poultry</h1>
+                        <p class="text-sm text-gray-600">Raising Quality, Naturally</p>
+                    </div>
+                </div>
+                
+                <!-- Navigation -->
+                <nav class="hidden md:flex flex-wrap justify-center space-x-0 md:space-x-6 space-y-2 md:space-y-0">
+                    <a href="index.html#home" class="px-4 py-2 rounded-lg hover:bg-primary-light hover:text-primary transition duration-300 font-medium text-gray-700">Home</a>
+                    <a href="index.html#products" class="px-4 py-2 rounded-lg hover:bg-primary-light hover:text-primary transition duration-300 font-medium text-gray-700">Products</a>
+                    <a href="index.html#contact" class="px-4 py-2 rounded-lg hover:bg-primary-light hover:text-primary transition duration-300 font-medium text-gray-700">Contact</a>
+                </nav>
+
+                <!-- Navigation on small screens -->
+                <!-- Mobile Hamburger Button -->
+                <button id="mobile-menu-btn" class="md:hidden z-50 absolute right-5 top-5 w-10 h-10 text-gray-800 focus:outline-none">
+                    <div class="block w-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                        <span aria-hidden="true"
+                            class="block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out -translate-y-1.5 rounded-full"></span>
+                        <span aria-hidden="true"
+                            class="block absolute  h-0.5 w-5 bg-current transform transition duration-500 ease-in-out rounded-full"></span>
+                        <span aria-hidden="true"
+                            class="block absolute  h-0.5 w-5 bg-current transform transition duration-500 ease-in-out translate-y-1.5 rounded-full"></span>
+                    </div>
+                </button>
+
+                <!-- Mobile Menu Overlay -->
+                <div id="mobile-menu-overlay"
+                    class="fixed inset-0 bg-white/95 backdrop-blur-sm z-40 transform translate-x-full transition-transform duration-500 ease-in-out md:hidden flex flex-col items-center justify-center space-y-8">
+                    <a href="#home"
+                        class="mobile-link text-2xl font-poppins font-bold text-gray-800 hover:text-primary transition duration-300 opacity-0 transform translate-y-4">Home</a>
+                    <a href="#products"
+                        class="mobile-link text-2xl font-poppins font-bold text-gray-800 hover:text-primary transition duration-300 opacity-0 transform translate-y-4">Products</a>
+                    <a href="#gallery"
+                        class="mobile-link text-2xl font-poppins font-bold text-gray-800 hover:text-primary transition duration-300 opacity-0 transform translate-y-4">Gallery</a>
+                    <a href="#contact"
+                        class="mobile-link text-2xl font-poppins font-bold text-gray-800 hover:text-primary transition duration-300 opacity-0 transform translate-y-4">Contact</a>
+                    <a href="#order"
+                        class="mobile-link text-2xl font-poppins font-bold text-primary hover:text-primary-dark transition duration-300 opacity-0 transform translate-y-4">Order
+                        Now</a>
+                </div>
+            </div>
+        </div>
     </header>
-<h1>Order Form</h1>
 
-<form id="orderForm">
-    <label for="item">Item:</label><br />
-    <input type="text" id="item" name="item" readonly><br /><br />
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8 md:py-12">
+        <!-- Page Header -->
+        <div class="text-center mb-10 md:mb-16 animate-fade-in">
+            <h1 class="font-poppins text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4">Place Your Order</h1>
+            <div class="w-24 h-1 bg-primary mx-auto mb-6"></div>
+            <p class="text-gray-600 text-lg max-w-2xl mx-auto">Complete the form below to place your order. We'll contact you shortly to confirm details and arrange delivery.</p>
+        </div>
+        
+        <div class="max-w-6xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Order Form -->
+                <div class="lg:col-span-2">
+                    <div class="bg-white rounded-2xl form-card p-6 md:p-8 animate-slide-up">
+                        <div class="flex items-center mb-8">
+                            <div class="bg-primary-light p-3 rounded-full mr-4">
+                                <i class="fas fa-shopping-cart text-primary text-xl"></i>
+                            </div>
+                            <h2 class="font-poppins text-2xl font-bold text-gray-800">Order Details</h2>
+                        </div>
+                        
+                        <form id="orderForm" class="space-y-8">
+                            <!-- Product Selection -->
+                            <div>
+                                <label for="item" class="block font-poppins text-lg font-medium text-gray-800 mb-3">Product</label>
+                                <div class="relative">
+                                    <input type="text" id="item" name="item" readonly
+                                           class="w-full px-5 py-4 bg-gray-50 border border-gray-300 rounded-xl text-gray-700 font-medium focus:outline-none focus:border-primary form-input">
+                                    <div class="absolute right-4 top-1/2 transform -translate-y-1/2">
+                                        <i class="fas fa-chevron-down text-gray-400"></i>
+                                    </div>
+                                </div>
+                                <p class="mt-2 text-gray-500 text-sm">Product selected from our product page</p>
+                            </div>
+                            
+                            <!-- Quantity -->
+                            <div>
+                                <div class="flex justify-between items-center mb-3">
+                                    <label for="quantity" class="block font-poppins text-lg font-medium text-gray-800">Quantity</label>
+                                    <div id="priceDisplay" class="text-lg font-bold text-primary"></div>
+                                </div>
+                                <div class="relative">
+                                    <input type="number" id="quantity" name="quantity" min="1" value="1"
+                                           class="w-full px-5 py-4 bg-gray-50 border border-gray-300 rounded-xl text-gray-800 font-medium focus:outline-none focus:border-primary form-input">
+                                    <div class="absolute right-4 top-1/2 transform -translate-y-1/2 flex space-x-2">
+                                        <button type="button" id="decreaseQty" class="w-8 h-8 flex items-center justify-center bg-gray-200 hover:bg-gray-300 rounded-full">
+                                            <i class="fas fa-minus text-gray-700"></i>
+                                        </button>
+                                        <button type="button" id="increaseQty" class="w-8 h-8 flex items-center justify-center bg-gray-200 hover:bg-gray-300 rounded-full">
+                                            <i class="fas fa-plus text-gray-700"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <p class="mt-2 text-gray-500 text-sm">Minimum order: 1 unit. Bulk discounts available for 20+ units.</p>
+                            </div>
+                            
+                            <!-- Customer Information -->
+                            <div>
+                                <h3 class="font-poppins text-xl font-bold text-gray-800 mb-6 pb-3 border-b border-gray-200">Customer Information</h3>
+                                
+                                <div class="space-y-6">
+                                    <!-- Name -->
+                                    <div>
+                                        <label for="name" class="block font-poppins text-lg font-medium text-gray-800 mb-3">Your Full Name <span class="text-red-500">*</span></label>
+                                        <div class="relative">
+                                            <input type="text" id="name" name="name" required
+                                                   class="w-full px-10 py-4 bg-gray-50 border border-gray-300 rounded-xl text-gray-800 focus:outline-none focus:border-primary form-input"
+                                                   placeholder="Enter your full name">
+                                            <div class="absolute left-4 top-1/2 transform -translate-y-1/2">
+                                                <i class="fas fa-user text-gray-400"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Email -->
+                                    <div>
+                                        <label for="email" class="block font-poppins text-lg font-medium text-gray-800 mb-3">Email Address</label>
+                                        <div class="relative">
+                                            <input type="email" id="email" name="email"
+                                                   class="w-full px-10 py-4 bg-gray-50 border border-gray-300 rounded-xl text-gray-800 focus:outline-none focus:border-primary form-input"
+                                                   placeholder="myname@gmail.com">
+                                            <div class="absolute left-4 top-1/2 transform -translate-y-1/2">
+                                                <i class="fas fa-envelope text-gray-400"></i>
+                                            </div>
+                                        </div>
+                                        <p class="mt-2 text-gray-500 text-sm">Optional - for order confirmation and updates</p>
+                                    </div>
+                                    
+                                    <!-- Phone -->
+                                    <div>
+                                        <label for="phone" class="block font-poppins text-lg font-medium text-gray-800 mb-3">Phone Number <span class="text-red-500">*</span></label>
+                                        <div class="relative">
+                                            <input type="tel" id="phone" name="phone" required
+                                                   class="w-full px-10 py-4 bg-gray-50 border border-gray-300 rounded-xl text-gray-800 focus:outline-none focus:border-primary form-input"
+                                                   placeholder="265 991 738 290">
+                                            <div class="absolute left-4 top-1/2 transform -translate-y-1/2">
+                                                <i class="fas fa-phone text-gray-400"></i>
+                                            </div>
+                                            <div class="absolute right-4 top-1/2 transform -translate-y-1/2">
+                                                <span class="text-gray-500">+265</span>
+                                            </div>
+                                        </div>
+                                        <p class="mt-2 text-gray-500 text-sm">We'll contact you on this number to confirm your order</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Order Summary (Mobile) -->
+                            <div class="lg:hidden bg-gray-50 p-6 rounded-xl border border-gray-200">
+                                <h3 class="font-poppins text-lg font-bold text-gray-800 mb-4">Order Summary</h3>
+                                <div class="space-y-3">
+                                    <div class="flex justify-between">
+                                        <span class="text-gray-600">Product:</span>
+                                        <span id="summaryItem" class="font-medium text-gray-800">Live Broiler</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-gray-600">Quantity:</span>
+                                        <span id="summaryQty" class="font-medium text-gray-800">1</span>
+                                    </div>
+                                    <div class="flex justify-between">
+                                        <span class="text-gray-600">Unit Price:</span>
+                                        <span id="summaryPrice" class="font-medium text-gray-800">MWK 15,000</span>
+                                    </div>
+                                    <div class="pt-3 border-t border-gray-300">
+                                        <div class="flex justify-between">
+                                            <span class="text-lg font-bold text-gray-800">Total:</span>
+                                            <span id="summaryTotal" class="text-xl font-bold text-primary">MWK 15,000</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Submit Buttons -->
+                            <div class="pt-6 border-t border-gray-200">
+                                <p class="font-poppins font-medium text-gray-800 mb-6">Choose how you'd like to submit your order:</p>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <button type="submit" id="submitEmail"
+                                            class="py-4 gmail-btn text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-[1.02]">
+                                        <i class="fab fa-google mr-2"></i> Submit via Gmail
+                                    </button>
+                                    
+                                    <button type="submit" id="submitWA"
+                                            class="py-4 whatsapp-btn text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:scale-[1.02]">
+                                        <i class="fab fa-whatsapp mr-2"></i> Submit via WhatsApp
+                                    </button>
+                                </div>
+                                
+                                <div class="mt-8 p-5 bg-blue-50 border border-blue-200 rounded-xl">
+                                    <div class="flex items-start">
+                                        <i class="fas fa-info-circle text-blue-500 text-xl mt-1 mr-3"></i>
+                                        <div>
+                                            <p class="font-medium text-gray-800 mb-2">Important Note:</p>
+                                            <p class="text-gray-700 text-sm">If submitting via Gmail, make sure your device is signed in to Gmail with the email account you've provided above. We'll respond to your order within 24 hours.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- Order Summary Sidebar -->
+                <div class="lg:col-span-1">
+                    <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8 sticky top-32 animate-fade-in">
+                        <div class="flex items-center mb-8">
+                            <div class="bg-secondary-light p-3 rounded-full mr-4">
+                                <i class="fas fa-receipt text-secondary text-xl"></i>
+                            </div>
+                            <h2 class="font-poppins text-2xl font-bold text-gray-800">Order Summary</h2>
+                        </div>
+                        
+                        <div class="mb-8">
+                            <div class="flex items-center justify-between mb-6 p-4 bg-primary-light rounded-xl">
+                                <div>
+                                    <h3 id="sidebarItem" class="font-poppins font-bold text-gray-800 text-lg">Live Broiler</h3>
+                                    <p class="text-gray-600 text-sm">Healthy and ready-for-market birds</p>
+                                </div>
+                                <div class="price-tag">
+                                    <span id="sidebarPrice">MWK 15,000</span>
+                                </div>
+                            </div>
+                            
+                            <div class="space-y-4 mb-8">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Quantity</span>
+                                    <span id="sidebarQty" class="font-medium text-gray-800">1</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Unit Price</span>
+                                    <span id="sidebarUnitPrice" class="font-medium text-gray-800">MWK 15,000</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Delivery</span>
+                                    <span class="font-medium text-green-600">Free*</span>
+                                </div>
+                            </div>
+                            
+                            <div class="pt-6 border-t border-gray-300">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-xl font-bold text-gray-800">Total Amount</span>
+                                    <span id="sidebarTotal" class="text-2xl font-bold text-primary">MWK 15,000</span>
+                                </div>
+                                <p class="text-gray-500 text-sm mt-2">*Free delivery within Blantyre for orders above MWK 30,000</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Delivery Info -->
+                        <div class="mb-8 p-5 bg-green-50 border border-green-200 rounded-xl">
+                            <h4 class="font-poppins font-bold text-gray-800 mb-3 flex items-center">
+                                <i class="fas fa-shipping-fast text-green-500 mr-2"></i> Delivery Information
+                            </h4>
+                            <ul class="space-y-2 text-gray-700 text-sm">
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mt-1 mr-2 text-xs"></i>
+                                    <span>Orders placed before 2 PM are delivered same day</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mt-1 mr-2 text-xs"></i>
+                                    <span>Free delivery within Blantyre for orders above MWK 30,000</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fas fa-check-circle text-green-500 mt-1 mr-2 text-xs"></i>
+                                    <span>Delivery outside Blantyre available at additional cost</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Contact Info -->
+                        <div class="p-5 bg-gray-50 border border-gray-200 rounded-xl">
+                            <h4 class="font-poppins font-bold text-gray-800 mb-3">Need Help?</h4>
+                            <p class="text-gray-700 text-sm mb-4">Call us directly for assistance with your order:</p>
+                            <div class="space-y-3">
+                                <a href="tel:+265996893890" class="flex items-center text-gray-700 hover:text-primary transition duration-300">
+                                    <i class="fas fa-phone-alt mr-3 text-gray-500"></i>
+                                    <span>+265 996 893 890</span>
+                                </a>
+                                <a href="tel:+265887323720" class="flex items-center text-gray-700 hover:text-primary transition duration-300">
+                                    <i class="fas fa-phone mr-3 text-gray-500"></i>
+                                    <span>+265 887 323 720</span>
+                                </a>
+                                <a href="https://wa.me/265996893890" target="_blank" class="flex items-center text-gray-700 hover:text-green-600 transition duration-300">
+                                    <i class="fab fa-whatsapp mr-3 text-gray-500"></i>
+                                    <span>WhatsApp: +265 996 893 890</span>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Back Button -->
+                        <a href="index.html#products" class="mt-8 block w-full py-4 back-btn text-white font-bold text-center rounded-xl shadow-md hover:shadow-xl transition duration-300">
+                            <i class="fas fa-arrow-left mr-2"></i> Back to Products
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 
-    <label for="quantity">Quantity</label><br />
-    <input type="number" id="quantity" name="quantity"><br /><br />
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12 mt-16">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-8 md:mb-0">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="bg-primary p-3 rounded-full">
+                            <i class="fas fa-egg text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h2 class="font-poppins text-2xl font-bold">Newton's Fresh Poultry</h2>
+                            <p class="text-gray-300">Raising Quality, Naturally</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 max-w-md">Providing Blantyre with healthy, naturally raised poultry since 2025. Quality you can trust, service you can rely on.</p>
+                </div>
+                
+                <div class="text-center md:text-right">
+                    <h3 class="font-poppins text-xl font-bold mb-4">Quick Links</h3>
+                    <div class="flex flex-col space-y-2">
+                        <a href="index.html#home" class="text-gray-300 hover:text-white transition duration-300">
+                            <i class="fas fa-home mr-2"></i> Home
+                        </a>
+                        <a href="index.html#products" class="text-gray-300 hover:text-white transition duration-300">
+                            <i class="fas fa-shopping-cart mr-2"></i> Products
+                        </a>
+                        <a href="index.html#contact" class="text-gray-300 hover:text-white transition duration-300">
+                            <i class="fas fa-phone-alt mr-2"></i> Contact Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 pt-8 border-t border-gray-700 text-center text-gray-400">
+                <p>&copy; 2023 Newton's Fresh Poultry. All rights reserved. | Located in Kanjedza, Blantyre, Malawi</p>
+            </div>
+        </div>
+    </footer>
 
-    
-    <label for="name">Your Name:</label><br />
-    <input type="text" id="name" name="name" required><br /><br />
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/265996893890" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-2xl z-40 hover:bg-green-600 transition duration-300 animate-pulse-slow">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
 
-    <label for="email">Your Email:</label><br />
-    <input type="email" id="email" name="email" placeholder="myname@gmail.com" required><br /><br />
-    
-    
-    <label for="phone">Phone Number:</label><br />
-    <input type="tel" id="phone" name="phone" required placeholder="991738290"><br /><br />
-    
-    <button type="submit">Submit Order</button>
-    <p><strong>Note:</strong>Make sure your device is signed in to gmail with the email account you have submitted</p>
-    <a id="back" href="index.html">← Back to Products</a>
-</form>
+    <!-- Success Modal -->
+    <div id="successModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-2xl p-8 max-w-md mx-4 animate-fade-in">
+            <div class="text-center">
+                <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-check text-3xl text-green-500"></i>
+                </div>
+                <h3 class="font-poppins text-2xl font-bold text-gray-800 mb-4">Order Submitted!</h3>
+                <p class="text-gray-600 mb-6">Thank you for your order. We've received your details and will contact you shortly to confirm.</p>
+                <div class="space-y-3">
+                    <button id="closeModal" class="w-full py-3 bg-primary text-white font-bold rounded-lg hover:bg-primary-dark transition duration-300">
+                        Continue Shopping
+                    </button>
+                    <a href="index.html" class="block w-full py-3 bg-gray-200 text-gray-800 font-bold rounded-lg hover:bg-gray-300 transition duration-300 text-center">
+                        Back to Home
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<script src="autofill.js"></script>
-<script src="submitOrder.js"></script>
+    <script>
+
+         // Mobile Menu Logic
+        const btn = document.getElementById('mobile-menu-btn');
+        const overlay = document.getElementById('mobile-menu-overlay');
+        const spans = btn.querySelectorAll('span');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        let isMenuOpen = false;
+
+        btn.addEventListener('click', () => {
+            isMenuOpen = !isMenuOpen;
+
+            // Toggle Hamburger Icon
+            if (isMenuOpen) {
+                spans[0].classList.add('rotate-45', 'translate-y-1.5', 'translate-x-0');
+                btn.classList.add('open');
+
+                // Show Overlay
+                overlay.classList.remove('translate-x-full');
+
+                // Staggered Link Animation
+                mobileLinks.forEach((link, index) => {
+                    setTimeout(() => {
+                        link.classList.remove('opacity-0', 'translate-y-4');
+                    }, 150 + (index * 100)); // Delay start + stagger
+                });
+
+                // Disable Body Scroll
+                document.body.style.overflow = 'hidden';
+
+            } else {
+                btn.classList.remove('open');
+
+                // Hide Overlay
+                overlay.classList.add('translate-x-full');
+
+                // Reset Links
+                mobileLinks.forEach(link => {
+                    link.classList.add('opacity-0', 'translate-y-4');
+                });
+
+                // Enable Body Scroll
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Close menu when a link is clicked
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                isMenuOpen = false;
+                btn.classList.remove('open');
+                overlay.classList.add('translate-x-full');
+                mobileLinks.forEach(l => {
+                    l.classList.add('opacity-0', 'translate-y-4');
+                });
+                document.body.style.overflow = '';
+            });
+        });
+        
+        // Product price mapping
+        const productPrices = {
+            'Live Broiler': 20000,
+            'Slaughtered Broiler': 18000,
+            'Chicken Manure': 10000
+        };
+        
+        // Get product from URL parameter
+        function getProductFromURL() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const product = urlParams.get('item') || 'Live Broiler';
+            return product;
+        }
+        
+        // Format price in MWK format
+        function formatPrice(price) {
+            return `MWK ${price.toLocaleString('en-US')}`;
+        }
+        
+        // Calculate and update total
+        function updateOrderSummary() {
+            const product = getProductFromURL();
+            const quantity = parseInt(document.getElementById('quantity').value) || 1;
+            const unitPrice = productPrices[product] || 15000;
+            const totalPrice = unitPrice * quantity;
+            
+            // Update all displays
+            document.getElementById('item').value = product;
+            
+            // Update product displays
+            document.getElementById('summaryItem').textContent = product;
+            document.getElementById('sidebarItem').textContent = product;
+            
+            // Update quantity displays
+            document.getElementById('summaryQty').textContent = quantity;
+            document.getElementById('sidebarQty').textContent = quantity;
+            
+            // Update price displays
+            document.getElementById('priceDisplay').textContent = formatPrice(totalPrice);
+            document.getElementById('summaryPrice').textContent = formatPrice(unitPrice);
+            document.getElementById('sidebarPrice').textContent = formatPrice(unitPrice);
+            document.getElementById('sidebarUnitPrice').textContent = formatPrice(unitPrice);
+            
+            // Update total displays
+            document.getElementById('summaryTotal').textContent = formatPrice(totalPrice);
+            document.getElementById('sidebarTotal').textContent = formatPrice(totalPrice);
+        }
+        
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set initial product from URL
+            const product = getProductFromURL();
+            document.getElementById('item').value = product;
+            
+            // Update order summary
+            updateOrderSummary();
+            
+            // Quantity buttons
+            document.getElementById('increaseQty').addEventListener('click', function() {
+                const quantityInput = document.getElementById('quantity');
+                quantityInput.value = parseInt(quantityInput.value) + 1;
+                updateOrderSummary();
+            });
+            
+            document.getElementById('decreaseQty').addEventListener('click', function() {
+                const quantityInput = document.getElementById('quantity');
+                const currentValue = parseInt(quantityInput.value);
+                if (currentValue > 1) {
+                    quantityInput.value = currentValue - 1;
+                    updateOrderSummary();
+                }
+            });
+            
+            document.getElementById('quantity').addEventListener('input', updateOrderSummary);
+            
+            // Form submission handlers
+            document.getElementById('submitEmail').addEventListener('click', function(e) {
+                e.preventDefault();
+                if (validateForm()) {
+                    submitOrder('email');
+                }
+            });
+            
+            document.getElementById('submitWA').addEventListener('click', function(e) {
+                e.preventDefault();
+                if (validateForm()) {
+                    submitOrder('whatsapp');
+                }
+            });
+            
+            // Modal close button
+            document.getElementById('closeModal').addEventListener('click', function() {
+                document.getElementById('successModal').classList.add('hidden');
+            });
+        });
+        
+        // Validate form
+        function validateForm() {
+            const name = document.getElementById('name').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            
+            if (!name) {
+                alert('Please enter your name');
+                document.getElementById('name').focus();
+                return false;
+            }
+            
+            if (!phone) {
+                alert('Please enter your phone number');
+                document.getElementById('phone').focus();
+                return false;
+            }
+            
+            // Basic phone validation (at least 9 digits)
+            const phoneDigits = phone.replace(/\D/g, '');
+            if (phoneDigits.length < 9) {
+                alert('Please enter a valid phone number (at least 9 digits)');
+                document.getElementById('phone').focus();
+                return false;
+            }
+            
+            return true;
+        }
+        
+        // Submit order
+        function submitOrder(method) {
+            const product = document.getElementById('item').value;
+            const quantity = document.getElementById('quantity').value;
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const total = document.getElementById('sidebarTotal').textContent;
+            
+            const orderDetails = `
+                Order Details:
+                ----------------
+                Product: ${product}
+                Quantity: ${quantity}
+                Total Amount: ${total}
+
+                Customer Information:
+                ----------------
+                Name: ${name}
+                Email: ${email}
+                Phone: ${phone}
+
+                Order Date: ${new Date().toLocaleDateString()}
+                            `.trim();
+                            
+            if (method === 'email') {
+                // Gmail submission
+                const subject = `New Order: ${product} from ${name}`;
+                const body = encodeURIComponent(orderDetails);
+                window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=newtonsbroilers@gmail.com&su=${encodeURIComponent(subject)}&body=${body}`, '_blank');
+            } else if (method === 'whatsapp') {
+                // WhatsApp submission
+                const message = encodeURIComponent(`*NEW ORDER REQUEST*\n\n${orderDetails}`);
+                window.open(`https://wa.me/265996893890?text=${message}`, '_blank');
+            }
+            
+            // Show success modal
+            document.getElementById('successModal').classList.remove('hidden');
+            
+            // Clear form (optional)
+            // document.getElementById('orderForm').reset();
+            // updateOrderSummary();
+        }
+    </script>
 </body>
 </html>

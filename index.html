@@ -1,109 +1,693 @@
-<!-- main   -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/mainpage.css">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon"> 
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description"
+        content="Newton's Fresh Poultry is a poultry farm focused on providing high-quality eggs and chicken meat to customers.">
+    <meta name="keywords" content="chicken, eggs, poultry, farm, chicken meat">
+    <meta name="author" content="Newton's Fresh Poultry">
+    <meta description="Newton's Fresh Poultry is a poultry farm focused on providing high-quality eggs and chicken meat to customers."> 
     <title>Newton's Fresh Poultry</title>
-</head>
-<body>
-<!--Top most head part-->   
-<div id="header">
-    <div id="logo">
-    <img id="icon" src="imgs/Icon1.png" alt="logo">
-    <h1 class="title"><strong>Newton's Fresh Poultry</strong></h1>
-    <div id="navbar">
-        <a class="navlink" href="#space1">Pricing</a>
-        <a class="navlink" href="#space2">Photos</a>
-        <a class="navlink" href="#space3">Contact</a>
-    </div>
-    </div>
-    <h4>"Order Now!!"</h4>
-</div>    
 
-<!--First part of the main body intriducing the site-->
-<main>
-<section id="introduction">
-    <p>✨Welcome to Newton's Fresh Poultry – Raising Quality, Naturally😊.</p>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="output.css">
+    <!-- Icon -->
+    <link rel="icon"
+        href="imgs/Icon1.png"
+        type="image/png">
     
-    <p>At Newton's Fresh Poultry, we specialize in producing healthy, fast-growing broiler chickens raised with care, clean housing, and high-quality feed. Whether you’re looking for live chickens, dressed broilers, or reliable supply for your business, we deliver consistent quality and freshness every time.</p>
 
-    <p>Located in <strong><em>Kanjedza, Blantyre,</em></strong> we’re a proudly local business focused on honest service, fair prices, and strong community relationships. From chick to chicken, we believe every bird deserves the best — and so do our customers.</p>
+    <!-- Custom CSS -->
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
 
-    <p>👉 Order today and experience poultry done right.</p>
-</section>
-<div></div>
-<div id="space1"></div>
-<section id="container">
-    <h1 class="section-title">Our Products & Pricing</h1>
-<div id="Pricing">
-    <div class="product-card">
-        <h2 class="product-title">Live Broiler</h2>
-        <p class="product-description">Healthy and ready-for-market birds.</p>
-        <p class="product-price">MWK 15,000 / bird</p>
-        <a href="order.html?item=Live Broiler">
-        <button class="quote-button">Order</button>
-        </a>
-    </div>
+        .hero-bg {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('imgs/bg-transparent.png');
+            background-size: cover;
+            background-position: center;
+            background-position-y: 1%;
+            background-attachment: fixed;
 
-    <div class="product-card">
-        <h2 class="product-title">Slaughtered Broiler</h2>
-        <p class="product-description">Cleaned, dressed, and packaged.</p>
-        <p class="product-price">MWK 15,000 / bird</p>
-        <a href="order.html?item=Slaughtered Broiler">
-            <button class="quote-button">Order</button>
-        </a> 
-    </div>
+        }
 
-    <div class="product-card">
-        <h2 class="product-title">Chicken Manure</h2>
-        <p class="product-description">Organic fertilizer, bagged or bulk.</p>
-        <p class="product-price">MWK 5,000 / 50kg bag</p>
-        <a href="order.html?item=Chicken Manure">
-        <button class="quote-button">Order</button>
-        </a>
-    </div>
-</div>
-</section>
-<div id="space2"></div>
-<section id="photos">
-    <h1 class="gallery-title">Our Farm in Photos</h1>
-    <div class="gallery-grid">
-        <div class="gallery-item">
-        <img src="imgs/chicks.jpg" alt="Chicks feeding">
-        <p>Strong and heakthy chicks</p>
-    </div>
-    <div class="gallery-item">
-        <img src="imgs/feedingbroilers.jpg" alt="Feeding broilers">
-        <p>Broilers during feeding time</p>
-    </div>
-    <div class="gallery-item">
-        <img src="imgs/plastic bag.jpg" alt="packed broilers">
-        <p>Dressed broilers packaged for sale</p>
-    </div>
-    </div>
-</section>
-</div>
+        .section-pattern {
+            background-color: #f9f9f9;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23e8f5e9' fill-opacity='0.2' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
 
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-<div id="space3"></div>
-<!-- Contact Section -->
-<section id="contact" class="section">
-    <h2>Contact Us</h2>
-    <div class="contact-info">
-    <p>📞 Phone: <a href="tel:+265996893890" target="_blank">+265 996 893 890</a> / <a href="tel:+265887323720">+265 887 323 720</a></p>
-    <p>💬 WhatsApp: <a href="https://wa.me/265996893890" rel="noopener" target="_blank">+265 996 893 890</a></p>
-    <p>📧 Email: <a href="mailto:newtonsbroilers@gmail.com" target="_blank">newtonsbroilers@gmail.com</a></p>
-    <button id="directions" onclick="window.open('https://maps.app.goo.gl/Q9oMndZs15scggM78', '_blank')">
-    Get Directions
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .order-btn {
+            background: linear-gradient(to right, #2d8c3c, #1e6b2c);
+        }
+
+        .order-btn:hover {
+            background: linear-gradient(to right, #1e6b2c, #2d8c3c);
+        }
+
+        /* Hamburger Animation Classes */
+        .open .block:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .open .block:nth-child(2) {
+            opacity: 0;
+        }
+
+        .open .block:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+    </style>
+</head>
+
+<body class="font-opensans bg-gray-50">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+                <!-- Logo and Brand -->
+                <div class="flex items-center space-x-4 mb-4 md:mb-0">
+                    <div class="bg-primary-light p-4 rounded-full">
+                        <img src="imgs/Icon1.png" alt="Loogo" class="w-8 h-8">
+                    </div>
+                    <div>
+                        <h1 class="font-poppins text-pretty pr-10 text-2xl font-bold text-gray-800">Newton's Fresh Poultry</h1>
+                        <p class="text-sm text-gray-600">Raising Quality, Naturally</p>
+                    
+                    </div>
+                </div>
+
+                <!-- Navigation on large screens -->
+                <nav class="hidden md:flex flex-wrap justify-center space-x-6 space-y-2 md:space-y-0">
+                    <a href="#home"
+                        class="px-4 py-2 rounded-lg hover:bg-primary-light hover:text-primary transition duration-300 font-medium text-gray-700">Home</a>
+                    <a href="#products"
+                        class="px-4 py-2 rounded-lg hover:bg-primary-light hover:text-primary transition duration-300 font-medium text-gray-700">Products</a>
+                    <a href="#gallery"
+                        class="px-4 py-2 rounded-lg hover:bg-primary-light hover:text-primary transition duration-300 font-medium text-gray-700">Gallery</a>
+                    <a href="#contact"
+                        class="px-4 py-2 rounded-lg hover:bg-primary-light hover:text-primary transition duration-300 font-medium text-gray-700">Contact</a>
+                    <a href="#order"
+                        class="px-5 py-2 rounded-lg bg-primary text-white font-medium hover:bg-primary-dark transition duration-300 shadow-md">Order
+                        Now</a>
+                </nav>
+
+                <!-- Navigation on small screens -->
+                <!-- Mobile Hamburger Button -->
+                <button id="mobile-menu-btn" class="md:hidden z-50 absolute right-5 top-5 w-10 h-10 text-gray-800 focus:outline-none">
+                    <div class="block w-5 absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                        <span aria-hidden="true"
+                            class="block absolute h-0.5 w-5 bg-current transform transition duration-500 ease-in-out -translate-y-1.5 rounded-full"></span>
+                        <span aria-hidden="true"
+                            class="block absolute  h-0.5 w-5 bg-current transform transition duration-500 ease-in-out rounded-full"></span>
+                        <span aria-hidden="true"
+                            class="block absolute  h-0.5 w-5 bg-current transform transition duration-500 ease-in-out translate-y-1.5 rounded-full"></span>
+                    </div>
+                </button>
+
+                <!-- Mobile Menu Overlay -->
+                <div id="mobile-menu-overlay"
+                    class="fixed inset-0 bg-white/95 backdrop-blur-sm z-40 transform translate-x-full transition-transform duration-500 ease-in-out md:hidden flex flex-col items-center justify-center space-y-8">
+                    <!-- mini header -->
+                    <div class="h-20 mb-10 mx-auto flex flex-row items-center justify-center">
+                        <img src="imgs/Icon1.png" alt="Loogo" class="w-12 h-12">
+                        <p class="font-poppins text-2xl font-bold w-2/3">Newton's Fresh Poultry</p>
+                    </div>
+                    <a href="#home"
+                        class="mobile-link text-2xl font-poppins font-bold text-gray-800 hover:text-primary transition duration-300 opacity-0 transform translate-y-4">Home</a>
+                    <a href="#products"
+                        class="mobile-link text-2xl font-poppins font-bold text-gray-800 hover:text-primary transition duration-300 opacity-0 transform translate-y-4">Products</a>
+                    <a href="#gallery"
+                        class="mobile-link text-2xl font-poppins font-bold text-gray-800 hover:text-primary transition duration-300 opacity-0 transform translate-y-4">Gallery</a>
+                    <a href="#contact"
+                        class="mobile-link text-2xl font-poppins font-bold text-gray-800 hover:text-primary transition duration-300 opacity-0 transform translate-y-4">Contact</a>
+                    <a href="#order"
+                        class="mobile-link text-2xl font-poppins font-bold text-primary hover:text-primary-dark transition duration-300 opacity-0 transform translate-y-4">Order
+                        Now</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg py-20 md:pb-32 md:pt-36 text-white text-center">
+        <div class="container mx-auto px-4 animate-fade-in">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="font-poppins text-pretty text-4xl md:text-6xl font-bold mb-6">Fresh Poultry, <span
+                        class="text-secondary">Naturally Raised</span></h2>
+                <p class="text-xl md:text-2xl mb-10 leading-relaxed">Healthy, fast-growing broiler chickens raised with
+                    care, clean housing, and high-quality feed. Quality you can taste!</p>
+                <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-6">
+                    <a href="#products"
+                        class="px-8 py-4 bg-secondary text-white font-bold text-lg rounded-lg shadow-lg hover:bg-orange-600 transition duration-300 transform hover:scale-105">
+                        <i class="fas fa-shopping-cart mr-2"></i> View Products
+                    </a>
+                    <a href="#contact"
+                        class="px-8 py-4 bg-transparent border-2 border-white text-white font-bold text-lg rounded-lg hover:bg-white hover:text-gray-800 transition duration-300">
+                        <i class="fas fa-phone-alt mr-2"></i> Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-12 animate-slide-up">
+                    <h2 class="font-poppins text-3xl md:text-4xl font-bold text-gray-800 mb-4">Welcome to Newton's Fresh
+                        Poultry</h2>
+                    <div class="w-24 h-1 bg-primary mx-auto mb-8"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div class="animate-fade-in">
+                        <div class="bg-primary-light p-8 rounded-2xl shadow-lg">
+                            <p class="text-gray-700 text-lg mb-6 leading-relaxed">✨ At Newton's Fresh Poultry, we
+                                specialize in producing healthy, fast-growing broiler chickens raised with care, clean
+                                housing, and high-quality feed.</p>
+
+                            <p class="text-gray-700 text-lg mb-6 leading-relaxed">Whether you're looking for live
+                                chickens, dressed broilers, or reliable supply for your business, we deliver consistent
+                                quality and freshness every time.</p>
+
+                            <div class="bg-white p-6 rounded-xl mt-8 border-l-4 border-primary">
+                                <p class="text-gray-700"><strong class="text-primary">📍 Located in</strong> <em
+                                        class="text-gray-800 font-semibold">Kanjedza, Blantyre</em>, we're a proudly
+                                        local business focused on honest service, fair prices, and strong community
+                                        relationships.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="animate-slide-up">
+                        <div class="relative">
+                            <div class="bg-secondary-light p-10 rounded-2xl shadow-xl transform rotate-3">
+                                <div class="bg-white p-8 rounded-xl shadow-lg transform -rotate-1">
+                                    <h3 class="font-poppins text-2xl font-bold text-gray-800 mb-6">Why Choose Us?</h3>
+                                    <ul class="space-y-4">
+                                        <li class="flex items-start">
+                                            <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+                                            <span class="text-gray-700">Naturally raised with no harmful
+                                                additives</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+                                            <span class="text-gray-700">Clean housing and healthy feeding
+                                                practices</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+                                            <span class="text-gray-700">Competitive pricing with bulk order
+                                                discounts</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+                                            <span class="text-gray-700">Reliable delivery and consistent quality</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-check-circle text-primary mt-1 mr-3"></i>
+                                            <span class="text-gray-700">Strong community relationships since 2015</span>
+                                        </li>
+                                    </ul>
+
+                                    <div class="mt-10 pt-6 border-t border-gray-200">
+                                        <p class="text-gray-800 text-xl font-semibold text-center">👉 Order today and
+                                            experience poultry done right.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-20 section-pattern">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="font-poppins text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Products & Pricing</h2>
+                <div class="w-24 h-1 bg-primary mx-auto mb-8"></div>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">Choose from our range of premium poultry products,
+                    all raised with the highest standards of care and quality.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Product Card 1 -->
+                <div class="card-hover bg-white rounded-2xl shadow-xl overflow-hidden animate-fade-in">
+                    <div class="h-48 bg-gradient-to-r from-green-100 to-green-200 flex items-center justify-center">
+                        <img src="imgs/feedingbroilers.jpg" alt="broiler" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="font-poppins text-2xl font-bold text-gray-800">Live Broiler</h3>
+                            <span
+                                class="bg-primary-light text-primary px-4 py-1 rounded-full text-sm font-semibold">Best
+                                Seller</span>
+                        </div>
+                        <p class="text-gray-600 mb-6">Healthy and ready-for-market birds, raised naturally with optimal
+                            nutrition and care.</p>
+
+                        <div class="mb-8">
+                            <div class="text-3xl font-bold text-primary mb-1">MWK 20,000</div>
+                            <div class="text-gray-500">per bird</div>
+                        </div>
+
+                        <a href="order.html?item=Live Broiler"
+                            class="block w-full py-4 order-btn text-white font-bold text-center rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                            <i class="fas fa-cart-plus mr-2"></i> Order Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="card-hover bg-white rounded-2xl shadow-xl overflow-hidden animate-slide-up">
+                    <div class="h-48 bg-gradient-to-r from-orange-100 to-orange-200 flex items-center justify-center">
+                        <img src="imgs/plastic bag.jpg" alt="broiler" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="font-poppins text-2xl font-bold text-gray-800 mb-4">Slaughtered Broiler</h3>
+                        <p class="text-gray-600 mb-6">Cleaned, dressed, and packaged for your convenience. Ready to cook
+                            and enjoy!</p>
+
+                        <div class="mb-8">
+                            <div class="text-3xl font-bold text-primary mb-1">MWK 18,000</div>
+                            <div class="text-gray-500">per bird (dressed)</div>
+                        </div>
+
+                        <a href="order.html?item=Slaughtered Broiler"
+                            class="block w-full py-4 order-btn text-white font-bold text-center rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                            <i class="fas fa-cart-plus mr-2"></i> Order Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="card-hover bg-white rounded-2xl shadow-xl overflow-hidden animate-fade-in">
+                    <div class="h-48 bg-gradient-to-r from-amber-100 to-amber-200 flex items-center justify-center">
+                        <img src="imgs/manure chicken.jpg" alt="broiler" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="font-poppins text-2xl font-bold text-gray-800 mb-4">Chicken Manure</h3>
+                        <p class="text-gray-600 mb-6">Organic fertilizer perfect for gardens and farms. Bagged or bulk
+                            options available.</p>
+
+                        <div class="mb-8">
+                            <div class="text-3xl font-bold text-primary mb-1">MWK 10,000</div>
+                            <div class="text-gray-500">per 50kg bag</div>
+                        </div>
+
+                        <a href="order.html?item=Chicken Manure"
+                            class="block w-full py-4 order-btn text-white font-bold text-center rounded-lg shadow-md hover:shadow-xl transition duration-300">
+                            <i class="fas fa-cart-plus mr-2"></i> Order Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bulk Order Note -->
+            <div class="max-w-3xl mx-auto mt-16 bg-white p-8 rounded-2xl shadow-lg border-l-4 border-secondary">
+                <div class="flex items-start">
+                    <div class="bg-secondary-light p-4 rounded-full mr-6">
+                        <i class="fas fa-percentage text-2xl text-secondary"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-poppins text-xl font-bold text-gray-800 mb-2">Bulk Order Discounts Available
+                        </h3>
+                        <p class="text-gray-700">For restaurants, hotels, retailers, and large events. Contact us
+                            directly for custom pricing on bulk orders of 20+ birds.</p>
+                        <a href="#contact"
+                            class="inline-flex items-center mt-4 text-primary font-semibold hover:text-primary-dark">
+                            Contact for bulk pricing <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="font-poppins text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Farm in Photos</h2>
+                <div class="w-24 h-1 bg-primary mx-auto mb-8"></div>
+                <p class="text-gray-600 text-lg max-w-2xl mx-auto">Take a look at our facilities and see how we raise
+                    our poultry with the highest standards of care and hygiene.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Gallery Item 1 -->
+                <div class="card-hover bg-gray-50 rounded-2xl overflow-hidden shadow-lg animate-fade-in">
+                    <div class="h-64 bg-gradient-to-br from-green-50 to-green-100 flex items-center justify-center">
+                        <img src="imgs/chicks.jpg" alt="Feeding Chicks" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-poppins text-xl font-bold text-gray-800 mb-2">Strong & Healthy Chicks</h3>
+                        <p class="text-gray-600">Our chicks are raised in clean, temperature-controlled environments
+                            with proper nutrition from day one.</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2 -->
+                <div class="card-hover bg-gray-50 rounded-2xl overflow-hidden shadow-lg animate-slide-up">
+                    <div class="h-64 bg-gradient-to-br from-amber-50 to-amber-100 flex items-center justify-center">
+                        <img src="imgs/feedingbroilers.jpg" alt="Healthy Chicken" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-poppins text-xl font-bold text-gray-800 mb-2">Quality Feeding Time</h3>
+                        <p class="text-gray-600">Broilers enjoy premium, nutritionally balanced feed to ensure optimal
+                            growth and health.</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3 -->
+                <div class="card-hover bg-gray-50 rounded-2xl overflow-hidden shadow-lg animate-fade-in">
+                    <div class="h-64 bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center">
+                        <img src="imgs/dressed broiler.jpg" alt="Healthy Chicken" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-poppins text-xl font-bold text-gray-800 mb-2">Ready for Market</h3>
+                        <p class="text-gray-600">Dressed broilers are carefully packaged and prepared for sale, ensuring
+                            freshness and quality.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 section-pattern">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="font-poppins text-3xl md:text-4xl font-bold text-gray-800 mb-4">Contact Us</h2>
+                    <div class="w-24 h-1 bg-primary mx-auto mb-8"></div>
+                    <p class="text-gray-600 text-lg max-w-2xl mx-auto">Get in touch with us for orders, inquiries, or to
+                        visit our farm in Kanjedza, Blantyre.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <!-- Contact Information -->
+                    <div class="animate-fade-in">
+                        <div class="bg-white p-8 rounded-2xl shadow-xl">
+                            <h3 class="font-poppins text-2xl font-bold text-gray-800 mb-8">Get In Touch</h3>
+
+                            <div class="space-y-8">
+                                <!-- Phone -->
+                                <div class="flex items-start">
+                                    <div class="bg-primary-light p-4 rounded-full mr-6">
+                                        <i class="fas fa-phone-alt text-primary text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-poppins text-lg font-bold text-gray-800 mb-2">Call Us</h4>
+                                        <div class="space-y-2">
+                                            <a href="tel:+265996893890"
+                                                class="block text-gray-700 hover:text-primary transition duration-300">
+                                                <i class="fas fa-mobile-alt mr-2"></i> +265 996 893 890
+                                            </a>
+                                            <a href="tel:+265887323720"
+                                                class="block text-gray-700 hover:text-primary transition duration-300">
+                                                <i class="fas fa-phone mr-2"></i> +265 887 323 720
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- WhatsApp -->
+                                <div class="flex items-start">
+                                    <div class="bg-green-100 p-4 rounded-full mr-6">
+                                        <i class="fab fa-whatsapp text-green-600 text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-poppins text-lg font-bold text-gray-800 mb-2">WhatsApp</h4>
+                                        <a href="https://wa.me/265996893890" target="_blank"
+                                            class="text-gray-700 hover:text-green-600 transition duration-300">
+                                            <i class="fab fa-whatsapp mr-2"></i> +265 996 893 890
+                                        </a>
+                                        <p class="text-sm text-gray-500 mt-2">Quick responses for orders and inquiries
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- Email -->
+                                <div class="flex items-start">
+                                    <div class="bg-blue-100 p-4 rounded-full mr-6">
+                                        <i class="fas fa-envelope text-blue-600 text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-poppins text-lg font-bold text-gray-800 mb-2">Email</h4>
+                                        <a href="mailto:newtonsbroilers@gmail.com"
+                                            class="text-gray-700 hover:text-blue-600 transition duration-300">
+                                            <i class="fas fa-envelope mr-2"></i> newtonsbroilers@gmail.com
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- Address -->
+                                <div class="flex items-start">
+                                    <div class="bg-accent-light p-4 rounded-full mr-6">
+                                        <i class="fas fa-map-marker-alt text-accent text-xl"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-poppins text-lg font-bold text-gray-800 mb-2">Visit Our Farm
+                                        </h4>
+                                        <p class="text-gray-700">Kanjedza, Blantyre, Malawi</p>
+                                        <button
+                                            onclick="window.open('https://maps.app.goo.gl/Q9oMndZs15scggM78', '_blank')"
+                                            class="mt-4 px-6 py-3 bg-accent text-white font-medium rounded-lg hover:bg-brown-800 transition duration-300 shadow-md">
+                                            <i class="fas fa-directions mr-2"></i> Get Directions
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Business Hours -->
+                            <div class="mt-12 pt-8 border-t border-gray-200">
+                                <h4 class="font-poppins text-xl font-bold text-gray-800 mb-4">Business Hours</h4>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="text-gray-700">Monday - Friday:</div>
+                                    <div class="font-medium">7:00 AM - 6:00 PM</div>
+                                    <div class="text-gray-700">Saturday:</div>
+                                    <div class="font-medium">8:00 AM - 4:00 PM</div>
+                                    <div class="text-gray-700">Sunday:</div>
+                                    <div class="font-medium">9:00 AM - 1:00 PM</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Map -->
+                    <div class="animate-slide-up">
+                        <div class="bg-white p-8 rounded-2xl shadow-xl h-full">
+                            <h3 class="font-poppins text-2xl font-bold text-gray-800 mb-8">Our Location</h3>
+                            <div class="rounded-xl overflow-hidden shadow-lg h-96">
+                                <!-- Map Placeholder -->
+                                <div
+                                    class="bg-gradient-to-br from-gray-100 to-gray-200 h-full flex flex-col items-center justify-center p-6">
+                                    <i class="fas fa-map-marked-alt text-6xl text-primary mb-6"></i>
+                                    <h4 class="font-poppins text-xl font-bold text-gray-800 mb-2">Kanjedza, Blantyre
+                                    </h4>
+                                    <p class="text-gray-600 text-center mb-6">Visit our farm in the heart of Blantyre's
+                                        agricultural community.</p>
+                                    <button onclick="window.open('https://maps.app.goo.gl/Q9oMndZs15scggM78', '_blank')"
+                                        class="px-8 py-3 bg-primary text-white font-medium rounded-lg hover:bg-primary-dark transition duration-300 shadow-md">
+                                        <i class="fas fa-map-pin mr-2"></i> Open in Google Maps
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="mt-8 p-6 bg-primary-light rounded-xl">
+                                <h4 class="font-poppins text-lg font-bold text-gray-800 mb-2">Farm Visits Welcome</h4>
+                                <p class="text-gray-700">We welcome visitors to our farm! See firsthand how we raise our
+                                    poultry with care and transparency. Please call ahead to schedule your visit.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-8 md:mb-0">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="bg-primary p-3 rounded-full">
+                            <i class="fas fa-egg text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h2 class="font-poppins text-2xl font-bold">Newton's Fresh Poultry</h2>
+                            <p class="text-gray-300">Raising Quality, Naturally</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 max-w-md">Providing Blantyre with healthy, naturally raised poultry since
+                        2015. Quality you can trust, service you can rely on.</p>
+                </div>
+
+                <div class="text-center md:text-right">
+                    <h3 class="font-poppins text-xl font-bold mb-4">Order Now</h3>
+                    <a href="#products" id="order"
+                        class="inline-block px-8 py-3 bg-secondary text-white font-bold rounded-lg shadow-lg hover:bg-orange-600 transition duration-300 transform hover:scale-105">
+                        <i class="fas fa-shopping-cart mr-2"></i> Place Your Order
+                    </a>
+                    <div class="mt-6 flex justify-center md:justify-end space-x-6">
+                        <a href="tel:+265996893890" class="text-gray-300 hover:text-white transition duration-300">
+                            <i class="fas fa-phone-alt mr-2"></i> Call
+                        </a>
+                        <a href="https://wa.me/265996893890" target="_blank"
+                            class="text-gray-300 hover:text-green-400 transition duration-300">
+                            <i class="fab fa-whatsapp mr-2"></i> WhatsApp
+                        </a>
+                        <a href="mailto:newtonsbroilers@gmail.com"
+                            class="text-gray-300 hover:text-blue-400 transition duration-300">
+                            <i class="fas fa-envelope mr-2"></i> Email
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-gray-700 text-center text-gray-400">
+                <p>&copy; 2023 Newton's Fresh Poultry. All rights reserved. | Located in Kanjedza, Blantyre, Malawi</p>
+                <p class="mt-2 text-sm">Website designed with <i class="fas fa-heart text-red-500"></i> for the local
+                    community</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/265996893890" target="_blank"
+        class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-2xl z-40 hover:bg-green-600 transition duration-300 animate-pulse-slow">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop"
+        class="fixed bottom-6 left-6 bg-primary text-white p-3 rounded-full shadow-2xl z-40 hover:bg-primary-dark transition duration-300 opacity-0">
+        <i class="fas fa-chevron-up"></i>
     </button>
-    </div>
-<div class="map-container">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d30715.644478665487!2d34.9814923!3d-15.7799151!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e0!3m2!1sen!2smw!4v1749654162763!5m2!1sen!2smw" width="600" height="450" allowfullscreen="" loading="lazy" title="map of Kanjedza, Blantyre"></iframe>
-</div>
-</section>
-</main>
+
+    <script>
+        // Back to top button
+        const backToTopButton = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.remove('opacity-0');
+                backToTopButton.classList.add('opacity-100');
+            } else {
+                backToTopButton.classList.remove('opacity-100');
+                backToTopButton.classList.add('opacity-0');
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if (this.getAttribute('href') === '#') return;
+
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Mobile Menu Logic
+        const btn = document.getElementById('mobile-menu-btn');
+        const overlay = document.getElementById('mobile-menu-overlay');
+        const spans = btn.querySelectorAll('span');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        let isMenuOpen = false;
+
+        btn.addEventListener('click', () => {
+            isMenuOpen = !isMenuOpen;
+
+            // Toggle Hamburger Icon
+            if (isMenuOpen) {
+                spans[0].classList.add('rotate-45', 'translate-y-1.5', 'translate-x-0');
+                btn.classList.add('open');
+
+                // Show Overlay
+                overlay.classList.remove('translate-x-full');
+
+                // Staggered Link Animation
+                mobileLinks.forEach((link, index) => {
+                    setTimeout(() => {
+                        link.classList.remove('opacity-0', 'translate-y-4');
+                    }, 150 + (index * 100)); // Delay start + stagger
+                });
+
+                // Disable Body Scroll
+                document.body.style.overflow = 'hidden';
+
+            } else {
+                btn.classList.remove('open');
+
+                // Hide Overlay
+                overlay.classList.add('translate-x-full');
+
+                // Reset Links
+                mobileLinks.forEach(link => {
+                    link.classList.add('opacity-0', 'translate-y-4');
+                });
+
+                // Enable Body Scroll
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Close menu when a link is clicked
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                isMenuOpen = false;
+                btn.classList.remove('open');
+                overlay.classList.add('translate-x-full');
+                mobileLinks.forEach(l => {
+                    l.classList.add('opacity-0', 'translate-y-4');
+                });
+                document.body.style.overflow = '';
+            });
+        });
+    </script>
 </body>
+
 </html>

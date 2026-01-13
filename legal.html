@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Legal Information | Newton's Fresh Poultry</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐔</text></svg>" type="image/svg+xml">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2d8c3c',
+                        'primary-light': '#e8f5e9',
+                        'primary-dark': '#1e6b2c',
+                        secondary: '#ff9900',
+                        'secondary-light': '#fff3e0',
+                        accent: '#8b4513',
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'opensans': ['Open Sans', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.8s ease-in-out',
+                        'slide-up': 'slideUp 0.5s ease-out',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' },
+                        },
+                        slideUp: {
+                            '0%': { transform: 'translateY(20px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' },
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        .legal-bg {
+            background: linear-gradient(135deg, #f9f9f9 0%, #f0f7f0 100%);
+        }
+        
+        .section-card {
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .section-card:hover {
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
+        }
+        
+        .sticky-nav {
+            position: sticky;
+            top: 100px;
+        }
+        
+        .nav-link.active {
+            background-color: #e8f5e9;
+            color: #2d8c3c;
+            font-weight: 600;
+            border-left: 4px solid #2d8c3c;
+        }
+        
+        .content-section {
+            scroll-margin-top: 120px;
+        }
+        
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #c1c1c1;
+            border-radius: 10px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a1a1a1;
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+        }
+        
+        .highlight-box {
+            border-left: 4px solid #2d8c3c;
+            background-color: #f8fff9;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .warning-box {
+            border-left: 4px solid #ff9900;
+            background-color: #fff9f0;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .info-box {
+            border-left: 4px solid #3498db;
+            background-color: #f0f9ff;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+        }
+    </style>
+</head>
+<body class="font-opensans legal-bg">
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <!-- Logo and Brand -->
+                <div class="flex items-center space-x-3 mb-4 md:mb-0">
+                    <a href="index.html" class="flex items-center space-x-3 hover:opacity-90 transition duration-300">
+                        <div class="bg-primary-light p-3 rounded-full">
+                            <i class="fas fa-egg text-primary text-2xl"></i>
+                        </div>
+                        <div>
+                            <h1 class="font-poppins text-2xl font-bold text-gray-800">Newton's Fresh Poultry</h1>
+                            <p class="text-sm text-gray-600">Raising Quality, Naturally</p>
+                        </div>
+                    </a>
+                </div>
+                
+                <!-- Navigation -->
+                <nav class="flex flex-wrap justify-center space-x-0 md:space-x-6 space-y-2 md:space-y-0">
+                    <a href="index.html#home" class="px-4 py-2 rounded-lg hover:bg-primary-light hover:text-primary transition duration-300 font-medium text-gray-700">Home</a>
+                    <a href="index.html#products" class="px-4 py-2 rounded-lg hover:bg-primary-light hover:text-primary transition duration-300 font-medium text-gray-700">Products</a>
+                    <a href="order.html" class="px-4 py-2 rounded-lg hover:bg-primary-light hover:text-primary transition duration-300 font-medium text-gray-700">Order</a>
+                    <a href="index.html#contact" class="px-4 py-2 rounded-lg hover:bg-primary-light hover:text-primary transition duration-300 font-medium text-gray-700">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8 md:py-12">
+        <!-- Page Header -->
+        <div class="text-center mb-12 animate-fade-in">
+            <h1 class="font-poppins text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4">Legal Information</h1>
+            <div class="w-24 h-1 bg-primary mx-auto mb-6"></div>
+            <p class="text-gray-600 text-lg max-w-3xl mx-auto">Welcome to Newton's Fresh Poultry legal documentation. Please read these terms carefully as they govern your use of our services.</p>
+            
+            <!-- Last Updated -->
+            <div class="mt-8 inline-flex items-center bg-primary-light px-6 py-3 rounded-full">
+                <i class="fas fa-calendar-alt text-primary mr-3"></i>
+                <span class="text-gray-800 font-medium">Last Updated: January 1, 2024</span>
+            </div>
+        </div>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-4 gap-8">
+            <!-- Left Navigation -->
+            <div class="lg:col-span-1">
+                <div class="bg-white rounded-2xl shadow-lg p-6 sticky-nav animate-slide-up">
+                    <h3 class="font-poppins text-xl font-bold text-gray-800 mb-6 flex items-center">
+                        <i class="fas fa-gavel text-primary mr-3"></i> Quick Navigation
+                    </h3>
+                    
+                    <nav class="space-y-2">
+                        <a href="#terms" class="nav-link block px-4 py-3 rounded-lg hover:bg-gray-50 transition duration-300 text-gray-700">
+                            <i class="fas fa-file-contract mr-3"></i> Terms & Conditions
+                        </a>
+                        <a href="#privacy" class="nav-link block px-4 py-3 rounded-lg hover:bg-gray-50 transition duration-300 text-gray-700">
+                            <i class="fas fa-shield-alt mr-3"></i> Privacy Policy
+                        </a>
+                        <a href="#disclaimer" class="nav-link block px-4 py-3 rounded-lg hover:bg-gray-50 transition duration-300 text-gray-700">
+                            <i class="fas fa-exclamation-triangle mr-3"></i> Disclaimer
+                        </a>
+                        <a href="#intellectual" class="nav-link block px-4 py-3 rounded-lg hover:bg-gray-50 transition duration-300 text-gray-700">
+                            <i class="fas fa-lightbulb mr-3"></i> Intellectual Property
+                        </a>
+                        <a href="#contact-legal" class="nav-link block px-4 py-3 rounded-lg hover:bg-gray-50 transition duration-300 text-gray-700">
+                            <i class="fas fa-envelope mr-3"></i> Legal Contact
+                        </a>
+                    </nav>
+                    
+                    <!-- Quick Actions -->
+                    <div class="mt-10 pt-8 border-t border-gray-200">
+                        <h4 class="font-poppins font-bold text-gray-800 mb-4">Quick Actions</h4>
+                        <div class="space-y-3">
+                            <button id="printPageBtn" class="w-full flex items-center justify-center px-4 py-3 bg-gray-100 text-gray-800 rounded-lg hover:bg-gray-200 transition duration-300">
+                                <i class="fas fa-print mr-2"></i> Print Page
+                            </button>
+                            <a href="order.html" class="block w-full text-center px-4 py-3 bg-primary text-white rounded-lg hover:bg-primary-dark transition duration-300 font-medium">
+                                <i class="fas fa-shopping-cart mr-2"></i> Place Order
+                            </a>
+                            <a href="index.html" class="block w-full text-center px-4 py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition duration-300 font-medium">
+                                <i class="fas fa-home mr-2"></i> Back to Home
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Acceptance -->
+                    <div class="mt-8 p-4 bg-green-50 border border-green-200 rounded-lg">
+                        <p class="text-sm text-gray-700">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            By using our website and services, you acknowledge that you have read and understood these documents.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Main Content -->
+            <div class="lg:col-span-3">
+                <!-- Terms & Conditions -->
+                <section id="terms" class="content-section bg-white rounded-2xl section-card p-6 md:p-8 mb-8 animate-fade-in">
+                    <div class="flex items-center mb-8 pb-6 border-b border-gray-200">
+                        <div class="bg-primary-light p-4 rounded-full mr-6">
+                            <i class="fas fa-file-contract text-primary text-2xl"></i>
+                        </div>
+                        <div>
+                            <h2 class="font-poppins text-2xl md:text-3xl font-bold text-gray-800">Terms & Conditions</h2>
+                            <p class="text-gray-600">Governing your use of Newton's Fresh Poultry services</p>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-8">
+                        <!-- Introduction -->
+                        <div>
+                            <h3 class="font-poppins text-xl font-bold text-gray-800 mb-4 flex items-center">
+                                <i class="fas fa-info-circle text-primary mr-3"></i> 1. Introduction
+                            </h3>
+                            <p class="text-gray-700 leading-relaxed">Welcome to Newton's Fresh Poultry. These Terms & Conditions govern your use of our website, mobile applications, and services. By accessing our website or placing an order, you agree to be bound by these terms. If you disagree with any part of these terms, please do not use our services.</p>
+                            
+                            <div class="highlight-box mt-6">
+                                <p class="font-medium text-gray-800 mb-2"><i class="fas fa-lightbulb text-primary mr-2"></i> Key Point:</p>
+                                <p class="text-gray-700">These terms constitute a legally binding agreement between you and Newton's Fresh Poultry regarding your use of our services.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Orders & Pricing -->
+                        <div>
+                            <h3 class="font-poppins text-xl font-bold text-gray-800 mb-4 flex items-center">
+                                <i class="fas fa-shopping-cart text-primary mr-3"></i> 2. Orders & Pricing
+                            </h3>
+                            <div class="space-y-4">
+                                <p class="text-gray-700">2.1. All prices listed on our website are in Malawian Kwacha (MWK) and include applicable taxes unless otherwise stated.</p>
+                                <p class="text-gray-700">2.2. We reserve the right to adjust prices due to market fluctuations, seasonal availability, or changes in supplier costs. We will provide notice of significant price changes.</p>
+                                <p class="text-gray-700">2.3. Orders are confirmed only after we acknowledge receipt of your order via email, SMS, or phone call. We reserve the right to refuse or cancel any order at our discretion.</p>
+                                <p class="text-gray-700">2.4. Minimum order quantities may apply for certain products or delivery areas.</p>
+                                <p class="text-gray-700">2.5. Bulk orders (20+ birds) are eligible for discounted pricing. Contact us directly for custom bulk pricing.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Delivery -->
+                        <div>
+                            <h3 class="font-poppins text-xl font-bold text-gray-800 mb-4 flex items-center">
+                                <i class="fas fa-truck text-primary mr-3"></i> 3. Delivery Terms
+                            </h3>
+                            <div class="space-y-4">
+                                <p class="text-gray-700">3.1. Delivery times provided are estimates and may vary based on location, traffic conditions, and product availability.</p>
+                                <p class="text-gray-700">3.2. Free delivery is offered for orders above MWK 30,000 within Blantyre city limits. Delivery charges apply for orders below this threshold and for locations outside Blantyre.</p>
+                                <p class="text-gray-700">3.3. Customers must provide accurate delivery addresses. Additional charges may apply for address corrections or failed delivery attempts.</p>
+                                <p class="text-gray-700">3.4. For slaughtered products requiring refrigeration, delivery must be accepted within 15 minutes of arrival to ensure product quality.</p>
+                                <p class="text-gray-700">3.5. We are not responsible for delivery delays caused by circumstances beyond our control (e.g., extreme weather, road closures, strikes).</p>
+                            </div>
+                            
+                            <div class="warning-box mt-6">
+                                <p class="font-medium text-gray-800 mb-2"><i class="fas fa-exclamation-triangle text-secondary mr-2"></i> Important:</p>
+                                <p class="text-gray-700">Live poultry must be collected from the delivery vehicle immediately upon arrival. We cannot hold live animals in vehicles for extended periods.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Payment -->
+                        <div>
+                            <h3 class="font-poppins text-xl font-bold text-gray-800 mb-4 flex items-center">
+                                <i class="fas fa-credit-card text-primary mr-3"></i> 4. Payment Terms
+                            </h3>
+                            <div class="space-y-4">
+                                <p class="text-gray-700">4.1. We accept the following payment methods: cash on delivery, bank transfers, and mobile money (Airtel Money, TNM Mpamba).</p>
+                                <p class="text-gray-700">4.2. Full payment must be received before delivery unless credit terms have been explicitly agreed upon in writing.</p>
+                                <p class="text-gray-700">4.3. For bank transfers, orders will be processed only after funds are confirmed in our account.</p>
+                                <p class="text-gray-700">4.4. Bulk orders may require a 50% deposit at the time of order confirmation, with the balance due before delivery.</p>
+                                <p class="text-gray-700">4.5. Prices are subject to change without notice, but confirmed orders will be honored at the agreed price.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Returns & Refunds -->
+                        <div>
+                            <h3 class="font-poppins text-xl font-bold text-gray-800 mb-4 flex items-center">
+                                <i class="fas fa-exchange-alt text-primary mr-3"></i> 5. Returns & Refunds
+                            </h3>
+                            <div class="space-y-4">
+                                <p class="text-gray-700">5.1. Live poultry sales are final once collected from our farm or received from our delivery vehicle.</p>
+                                <p class="text-gray-700">5.2. Slaughtered products may be returned within 2 hours of delivery if quality issues are identified (e.g., spoilage, incorrect product).</p>
+                                <p class="text-gray-700">5.3. To initiate a return, contact us immediately at <a href="tel:+265996893890" class="text-primary hover:underline">+265 996 893 890</a> with photos of the product and your order details.</p>
+                                <p class="text-gray-700">5.4. Approved refunds will be processed within 7-10 business days through the original payment method.</p>
+                                <p class="text-gray-700">5.5. Products must be returned in their original packaging and condition for refund consideration.</p>
+                                <p class="text-gray-700">5.6. We do not offer refunds for changes of mind or incorrect orders placed by customers.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Limitation of Liability -->
+                        <div>
+                            <h3 class="font-poppins text-xl font-bold text-gray-800 mb-4 flex items-center">
+                                <i class="fas fa-balance-scale text-primary mr-3"></i> 6. Limitation of Liability
+                            </h3>
+                            <div class="space-y-4">
+                                <p class="text-gray-700">6.1. Newton's Fresh Poultry shall not be liable for any indirect, incidental, special, or consequential damages arising from the use of our products or services.</p>
+                                <p class="text-gray-700">6.2. Our total liability for any claim shall not exceed the purchase price of the products in question.</p>
+                                <p class="text-gray-700">6.3. We are not responsible for any illness or health issues arising from improper handling, storage, or preparation of our products after delivery.</p>
+                                <p class="text-gray-700">6.4. Customers are responsible for ensuring they have adequate facilities to handle live poultry in accordance with local regulations.</p>
+                            </div>
+                            
+                            <div class="info-box mt-6">
+                                <p class="font-medium text-gray-800 mb-2"><i class="fas fa-info-circle text-blue-500 mr-2"></i> Note:</p>
+                                <p class="text-gray-700">We maintain high standards of animal welfare and food safety, but customers must follow proper food handling procedures after purchase.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Privacy Policy -->
+                <section id="privacy" class="content-section bg-white rounded-2xl section-card p-6 md:p-8 mb-8 animate-fade-in">
+                    <div class="flex items-center mb-8 pb-6 border-b border-gray-200">
+                        <div class="bg-primary-light p-4 rounded-full mr-6">
+                            <i class="fas fa-shield-alt text-primary text-2xl"></i>
+                        </div>
+                        <div>
+                            <h2 class="font-poppins text-2xl md:text-3xl font-bold text-gray-800">Privacy Policy</h2>
+                            <p class="text-gray-600">How we collect, use, and protect your information</p>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-8">
+                        <!-- Introduction -->
+                        <div>
+                            <h3 class="font-poppins text-xl font-bold text-gray-800 mb-4 flex items-center">
+                                <i class="fas fa-user-shield text-primary mr-3"></i> 1. Introduction
+                            </h3>
+                            <p class="text-gray-700 leading-relaxed">Newton's Fresh Poultry is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services. Please read this policy carefully. By using our services, you consent to the data practices described in this policy.</p>
+                        </div>
+                        
+                        <!-- Information Collection -->
+                        <div>
+                            <h3 class="font-poppins text-xl font-bold text-gray-800 mb-4 flex items-center">
+                                <i class="fas fa-database text-primary mr-3"></i> 2. Information We Collect
+                            </h3>
+                            <div class="space-y-6">
+                                <div>
+                                    <h4 class="font-medium text-gray-800 mb-3">2.1. Personal Information:</h4>
+                                    <ul class="space-y-2 text-gray-700 ml-6">
+                                        <li class="flex items-start">
+                                            <i class="fas fa-circle text-primary text-xs mt-2 mr-2"></i>
+                                            <span>Contact details: name, email address, phone number, delivery address</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-circle text-primary text-xs mt-2 mr-2"></i>
+                                            <span>Order information: products ordered, quantities, preferences</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-circle text-primary text-xs mt-2 mr-2"></i>
+                                            <span>Payment information: transaction details (processed securely through third-party providers)</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-circle text-primary text-xs mt-2 mr-2"></i>
+                                            <span>Communication records: emails, messages, call logs related to orders</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                
+                                <div>
+                                    <h4 class="font-medium text-gray-800 mb-3">2.2. Automatically Collected Information:</h4>
+                                    <ul class="space-y-2 text-gray-700 ml-6">
+                                        <li class="flex items-start">
+                                            <i class="fas fa-circle text-primary text-xs mt-2 mr-2"></i>
+                                            <span>Device information: IP address, browser type, operating system</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-circle text-primary text-xs mt-2 mr-2"></i>
+                                            <span>Usage data: pages visited, time spent, click patterns, referring website</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <i class="fas fa-circle text-primary text-xs mt-2 mr-2"></i>
+                                            <span>Location data: approximate location based on IP address</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Use of Information -->
+                        <div>
+                            <h3 class="font-poppins text-xl font-bold text-gray-800 mb-4 flex items-center">
+                                <i class="fas fa-cogs text-primary mr-3"></i> 3. How We Use Your Information
+                            </h3>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="bg-gray-50 p-5 rounded-xl">
+                                    <h4 class="font-medium text-gray-800 mb-3 flex items-center">
+                                        <i class="fas fa-check-circle text-primary mr-2"></i> Primary Uses
+                                    </h4>
+                                    <ul class="space-y-2 text-gray-700">
+                                        <li>• Process and fulfill your orders</li>
+                                        <li>• Communicate order confirmations and updates</li>
+                                        <li>• Arrange delivery and coordinate logistics</li>
+                                        <li>• Process payments and send invoices</li>
+                                        <li>• Respond to customer inquiries and provide support</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="bg-gray-50 p-5 rounded-xl">
+                                    <h4 class="font-medium text-gray-800 mb-3 flex items-center">
+                                        <i class="fas fa-chart-line text-primary mr-2"></i> Business Improvement
+                                    </h4>
+                                    <ul class="space-y-2 text-gray-700">
+                                        <li>• Improve our website, products, and services</li>
+                                        <li>• Analyze customer preferences and behavior</li>
+                                        <li>• Develop new products and services</li>
+                                        <li>• Send promotional offers (with your consent)</li>
+                                        <li>• Comply with legal obligations</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Data Sharing -->
+                        <div>
+                            <h3 class="font-poppins text-xl font-bold text-gray-800 mb-4 flex items-center">
+                                <i class="fas fa-share-alt text-primary mr-3"></i> 4. Information Sharing
+                            </h3>
+                            <p class="text-gray-700 mb-4">We do not sell, trade, or rent your personal information to third parties for marketing purposes. We may share information with:</p>
+                            
+                            <div class="space-y-4">
+                                <div class="flex items-start">
+                                    <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                        <i class="fas fa-truck text-blue-600"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-800">Service Providers</h4>
+                                        <p class="text-gray-700">Delivery services, payment processors, website hosting, and analytics providers who assist in our operations.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="bg-red-100 p-3 rounded-full mr-4">
+                                        <i class="fas fa-gavel text-red-600"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-800">Legal Requirements</h4>
+                                        <p class="text-gray-700">When required by law, court order, or government authority to comply with legal obligations.</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="bg-green-100 p-3 rounded-full mr-4">
+                                        <i class="fas fa-handshake text-green-600"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-800">Business Transfers</h4>
+                                        <p class="text-gray-700">In connection with a merger, acquisition, or sale of assets, where customer information may be transferred.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Data Security -->
+                        <div>
+                            <h3 class="font-poppins text-xl font-bold text-gray-800 mb-4 flex items-center">
+                                <i class="fas fa-lock text-primary mr-3"></i> 5. Data Security
+                            </h3>
+                            <div class="space-y-4">
+                                <p class="text-gray-700">We implement appropriate technical and organizational security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction.</p>
+                                
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                                    <div class="flex items-start">
+                                        <i class="fas fa-shield-check text-green-500 text-xl mt-1 mr-3"></i>
+                                        <div>
+                                            <h4 class="font-medium text-gray-800">Technical Measures</h4>
+                                            <p class="text-gray-700 text-sm">SSL encryption, firewalls, secure servers, regular security updates</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flex items-start">
+                                        <i class="fas fa-user-lock text-green-500 text-xl mt-1 mr-3"></i>
+                                        <div>
+                                            <h4 class="font-medium text-gray-800">Organizational Measures</h4>
+                                            <p class="text-gray-700 text-sm">Access controls, employee training, confidentiality agreements</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="warning-box mt-6">
+                                    <p class="font-medium text-gray-800 mb-2"><i class="fas fa-exclamation-triangle text-secondary mr-2"></i> Security Notice:</p>
+                                    <p class="text-gray-700">While we implement robust security measures, no method of transmission over the Internet or electronic storage is 100% secure. We cannot guarantee absolute security but we strive to use commercially acceptable means to protect your information.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Your Rights -->
+                        <div>
+                            <h3 class="font-poppins text-xl font-bold text-gray-800 mb-4 flex items-center">
+                                <i class="fas fa-user-check text-primary mr-3"></i> 6. Your Rights
+                            </h3>
+                            <div class="space-y-4">
+                                <p class="text-gray-700">You have the following rights regarding your personal information:</p>
+                                
+                                <div class="overflow-x-auto">
+                                    <table class="min-w-full bg-gray-50 rounded-lg overflow-hidden">
+                                        <thead class="bg-primary-light">
+                                            <tr>
+                                                <th class="py-3 px-4 text-left font-poppins font-medium text-gray-800">Right</th>
+                                                <th class="py-3 px-4 text-left font-poppins font-medium text-gray-800">Description</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="divide-y divide-gray-200">
+                                            <tr>
+                                                <td class="py-3 px-4 font-medium text-gray-800">Access</td>
+                                                <td class="py-3 px-4 text-gray-700">Request a copy of your personal information we hold</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="py-3 px-4 font-medium text-gray-800">Correction</td>
+                                                <td class="py-3 px-4 text-gray-700">Request correction of inaccurate or incomplete information</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="py-3 px-4 font-medium text-gray-800">Deletion</td>
+                                                <td class="py-3 px-4 text-gray-700">Request deletion of your information (subject to legal requirements)</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="py-3 px-4 font-medium text-gray-800">Objection</td>
+                                                <td class="py-3 px-4 text-gray-700">Object to processing of your information</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="py-3 px-4 font-medium text-gray-800">Portability</td>
+                                                <td class="py-3 px-4 text-gray-700">Request transfer of your information to another organization</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="py-3 px-4 font-medium text-gray-800">Withdraw Consent</td>
+                                                <td class="py-3 px-4 text-gray-700">Withdraw consent for marketing communications at any time</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                
+                                <p class="text-gray-700 mt-4">To exercise these rights, contact us at <a href="mailto:newtonsbroilers@gmail.com" class="text-primary hover:underline">newtonsbroilers@gmail.com</a>. We will respond to your request within 30 days.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Data Retention -->
+                        <div>
+                            <h3 class="font-poppins text-xl font-bold text-gray-800 mb-4 flex items-center">
+                                <i class="fas fa-hourglass-half text-primary mr-3"></i> 7. Data Retention
+                            </h3>
+                            <p class="text-gray-700">We retain your personal information for as long as necessary to fulfill the purposes outlined in this Privacy Policy, unless a longer retention period is required or permitted by law. Specific retention periods:</p>
+                            
+                            <div class="mt-4 space-y-3">
+                                <div class="flex justify-between items-center py-3 border-b border-gray-200">
+                                    <span class="text-gray-700">Active customer records</span>
+                                    <span class="font-medium text-gray-800">5 years after last activity</span>
+                                </div>
+                                <div class="flex justify-between items-center py-3 border-b border-gray-200">
+                                    <span class="text-gray-700">Financial transaction records</span>
+                                    <span class="font-medium text-gray-800">7 years (for tax purposes)</span>
+                                </div>
+                                <div class="flex justify-between items-center py-3 border-b border-gray-200">
+                                    <span class="text-gray-700">Website analytics data</span>
+                                    <span class="font-medium text-gray-800">26 months</span>
+                                </div>
+                                <div class="flex justify-between items-center py-3">
+                                    <span class="text-gray-700">Marketing consent records</span>
+                                    <span class="font-medium text-gray-800">Until consent withdrawn</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Cookies -->
+                        <div>
+                            <h3 class="font-poppins text-xl font-bold text-gray-800 mb-4 flex items-center">
+                                <i class="fas fa-cookie-bite text-primary mr-3"></i> 8. Cookies & Tracking
+                            </h3>
+                            <div class="space-y-4">
+                                <p class="text-gray-700">Our website uses cookies and similar tracking technologies to enhance your browsing experience, analyze website traffic, and understand user preferences.</p>
+                                
+                                <div class="bg-gray-50 p-5 rounded-xl">
+                                    <h4 class="font-medium text-gray-800 mb-3">Types of cookies we use:</h4>
+                                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                                        <div class="text-center p-4 bg-white rounded-lg">
+                                            <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                                <i class="fas fa-cog text-blue-500"></i>
+                                            </div>
+                                            <h5 class="font-medium text-gray-800">Essential</h5>
+                                            <p class="text-sm text-gray-600">Required for website functionality</p>
+                                        </div>
+                                        <div class="text-center p-4 bg-white rounded-lg">
+                                            <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                                <i class="fas fa-chart-bar text-green-500"></i>
+                                            </div>
+                                            <h5 class="font-medium text-gray-800">Analytics</h5>
+                                            <p class="text-sm text-gray-600">Help us understand website usage</p>
+                                        </div>
+                                        <div class="text-center p-4 bg-white rounded-lg">
+                                            <div class="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                                                <i class="fas fa-bullseye text-orange-500"></i>
+                                            </div>
+                                            <h5 class="font-medium text-gray-800">Preferences</h5>
+                                            <p class="text-sm text-gray-600">Remember your settings</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <p class="text-gray-700">You can control cookie settings through your browser preferences. Note that disabling cookies may affect certain website features.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Additional Legal Sections -->
+                <section id="disclaimer" class="content-section bg-white rounded-2xl section-card p-6 md:p-8 mb-8 animate-fade-in">
+                    <div class="flex items-center mb-8 pb-6 border-b border-gray-200">
+                        <div class="bg-primary-light p-4 rounded-full mr-6">
+                            <i class="fas fa-exclamation-triangle text-primary text-2xl"></i>
+                        </div>
+                        <div>
+                            <h2 class="font-poppins text-2xl md:text-3xl font-bold text-gray-800">Website Disclaimer</h2>
+                            <p class="text-gray-600">Important limitations and disclosures</p>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <p class="text-gray-700">The information contained on this website is for general information purposes only. While we strive to keep the information up to date and correct, we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability, or availability with respect to the website or the information, products, services, or related graphics contained on the website for any purpose.</p>
+                        
+                        <div class="warning-box">
+                            <p class="font-medium text-gray-800 mb-2"><i class="fas fa-exclamation-circle text-secondary mr-2"></i> Important:</p>
+                            <p class="text-gray-700">Any reliance you place on such information is therefore strictly at your own risk. In no event will we be liable for any loss or damage including without limitation, indirect or consequential loss or damage, or any loss or damage whatsoever arising from loss of data or profits arising out of, or in connection with, the use of this website.</p>
+                        </div>
+                        
+                        <p class="text-gray-700">Through this website you are able to link to other websites which are not under the control of Newton's Fresh Poultry. We have no control over the nature, content, and availability of those sites. The inclusion of any links does not necessarily imply a recommendation or endorse the views expressed within them.</p>
+                        
+                        <p class="text-gray-700">Every effort is made to keep the website up and running smoothly. However, Newton's Fresh Poultry takes no responsibility for, and will not be liable for, the website being temporarily unavailable due to technical issues beyond our control.</p>
+                    </div>
+                </section>
+                
+                <!-- Contact Section -->
+                <section id="contact-legal" class="content-section bg-white rounded-2xl section-card p-6 md:p-8 animate-fade-in">
+                    <div class="flex items-center mb-8 pb-6 border-b border-gray-200">
+                        <div class="bg-primary-light p-4 rounded-full mr-6">
+                            <i class="fas fa-envelope text-primary text-2xl"></i>
+                        </div>
+                        <div>
+                            <h2 class="font-poppins text-2xl md:text-3xl font-bold text-gray-800">Legal Contact Information</h2>
+                            <p class="text-gray-600">How to contact us regarding legal matters</p>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h3 class="font-poppins text-xl font-bold text-gray-800 mb-6">Contact Details</h3>
+                            <div class="space-y-6">
+                                <div class="flex items-start">
+                                    <div class="bg-primary-light p-3 rounded-full mr-4">
+                                        <i class="fas fa-building text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-800 mb-1">Newton's Fresh Poultry</h4>
+                                        <p class="text-gray-700">Kanjedza, Blantyre, Malawi</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="bg-primary-light p-3 rounded-full mr-4">
+                                        <i class="fas fa-phone-alt text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-800 mb-1">Phone Numbers</h4>
+                                        <p class="text-gray-700">
+                                            <a href="tel:+265996893890" class="hover:text-primary transition duration-300">+265 996 893 890</a><br>
+                                            <a href="tel:+265887323720" class="hover:text-primary transition duration-300">+265 887 323 720</a>
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="bg-primary-light p-3 rounded-full mr-4">
+                                        <i class="fas fa-envelope text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-800 mb-1">Email Address</h4>
+                                        <p class="text-gray-700">
+                                            <a href="mailto:newtonsbroilers@gmail.com" class="hover:text-primary transition duration-300">newtonsbroilers@gmail.com</a>
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start">
+                                    <div class="bg-primary-light p-3 rounded-full mr-4">
+                                        <i class="fas fa-clock text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium text-gray-800 mb-1">Response Time</h4>
+                                        <p class="text-gray-700">We aim to respond to legal inquiries within 3-5 business days.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <h3 class="font-poppins text-xl font-bold text-gray-800 mb-6">Submit Legal Inquiry</h3>
+                            <div class="bg-gray-50 p-6 rounded-xl">
+                                <p class="text-gray-700 mb-6">For legal matters, privacy concerns, or data protection requests, please include the following in your communication:</p>
+                                
+                                <ul class="space-y-3 text-gray-700 mb-6">
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-primary text-xs mt-1 mr-3"></i>
+                                        <span>Your full name and contact information</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-primary text-xs mt-1 mr-3"></i>
+                                        <span>Nature of your inquiry (privacy, terms, etc.)</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-primary text-xs mt-1 mr-3"></i>
+                                        <span>Any relevant order or account information</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <i class="fas fa-check text-primary text-xs mt-1 mr-3"></i>
+                                        <span>Specific details of your request or concern</span>
+                                    </li>
+                                </ul>
+                                
+                                <a href="mailto:newtonsbroilers@gmail.com?subject=Legal Inquiry" class="block w-full py-3 bg-primary text-white text-center font-medium rounded-lg hover:bg-primary-dark transition duration-300">
+                                    <i class="fas fa-paper-plane mr-2"></i> Send Legal Inquiry
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Effective Date -->
+                    <div class="mt-10 pt-8 border-t border-gray-200">
+                        <div class="flex flex-col md:flex-row justify-between items-center">
+                            <div>
+                                <p class="text-gray-800 font-medium">Effective Date: January 1, 2024</p>
+                                <p class="text-gray-600 text-sm">This document was last updated on the date shown above.</p>
+                            </div>
+                            <div class="mt-4 md:mt-0">
+                                <button id="acceptTermsBtn" class="px-6 py-3 bg-primary text-white font-medium rounded-lg hover:bg-primary-dark transition duration-300 shadow-md">
+                                    <i class="fas fa-check-circle mr-2"></i> Acknowledge & Accept
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12 mt-16">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-8 md:mb-0">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="bg-primary p-3 rounded-full">
+                            <i class="fas fa-egg text-white text-xl"></i>
+                        </div>
+                        <div>
+                            <h2 class="font-poppins text-2xl font-bold">Newton's Fresh Poultry</h2>
+                            <p class="text-gray-300">Raising Quality, Naturally</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 max-w-md">Providing Blantyre with healthy, naturally raised poultry since 2015. Quality you can trust, service you can rely on.</p>
+                </div>
+                
+                <div class="text-center md:text-right">
+                    <h3 class="font-poppins text-xl font-bold mb-4">Quick Links</h3>
+                    <div class="flex flex-col space-y-2">
+                        <a href="index.html#home" class="text-gray-300 hover:text-white transition duration-300">
+                            <i class="fas fa-home mr-2"></i> Home
+                        </a>
+                        <a href="index.html#products" class="text-gray-300 hover:text-white transition duration-300">
+                            <i class="fas fa-shopping-cart mr-2"></i> Products
+                        </a>
+                        <a href="order.html" class="text-gray-300 hover:text-white transition duration-300">
+                            <i class="fas fa-file-alt mr-2"></i> Order
+                        </a>
+                        <a href="index.html#contact" class="text-gray-300 hover:text-white transition duration-300">
+                            <i class="fas fa-phone-alt mr-2"></i> Contact Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 pt-8 border-t border-gray-700 text-center text-gray-400">
+                <p>&copy; 2023 Newton's Fresh Poultry. All rights reserved. | Located in Kanjedza, Blantyre, Malawi</p>
+                <p class="mt-2 text-sm">This document is provided for informational purposes and does not constitute legal advice.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top bg-primary text-white p-4 rounded-full shadow-2xl hover:bg-primary-dark transition duration-300">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Acceptance Modal -->
+    <div id="acceptanceModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-2xl p-8 max-w-md mx-4 animate-fade-in">
+            <div class="text-center">
+                <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-check text-3xl text-green-500"></i>
+                </div>
+                <h3 class="font-poppins text-2xl font-bold text-gray-800 mb-4">Terms Acknowledged</h3>
+                <p class="text-gray-600 mb-6">Thank you for reviewing our legal documents. Your acknowledgment has been recorded.</p>
+                <div class="space-y-3">
+                    <button id="closeAcceptanceModal" class="w-full py-3 bg-primary text-white font-bold rounded-lg hover:bg-primary-dark transition duration-300">
+                        Continue Browsing
+                    </button>
+                    <a href="index.html" class="block w-full py-3 bg-gray-200 text-gray-800 font-bold rounded-lg hover:bg-gray-300 transition duration-300 text-center">
+                        Return to Homepage
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Back to top button
+            const backToTopBtn = document.getElementById('backToTop');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    backToTopBtn.classList.add('show');
+                } else {
+                    backToTopBtn.classList.remove('show');
+                }
+            });
+            
+            backToTopBtn.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Update active navigation link
+                        document.querySelectorAll('.nav-link').forEach(link => {
+                            link.classList.remove('active');
+                        });
+                        this.classList.add('active');
+                    }
+                });
+            });
+            
+            // Update active nav link on scroll
+            const sections = document.querySelectorAll('.content-section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            window.addEventListener('scroll', () => {
+                let current = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 150;
+                    const sectionHeight = section.clientHeight;
+                    if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+            
+            // Print page button
+            document.getElementById('printPageBtn').addEventListener('click', () => {
+                window.print();
+            });
+            
+            // Accept terms button
+            const acceptBtn = document.getElementById('acceptTermsBtn');
+            const acceptanceModal = document.getElementById('acceptanceModal');
+            const closeAcceptanceModal = document.getElementById('closeAcceptanceModal');
+            
+            acceptBtn.addEventListener('click', () => {
+                acceptanceModal.classList.remove('hidden');
+                
+                // Store acceptance in localStorage
+                localStorage.setItem('legalAccepted', 'true');
+                localStorage.setItem('legalAcceptanceDate', new Date().toISOString());
+                
+                // Update button
+                acceptBtn.innerHTML = '<i class="fas fa-check-circle mr-2"></i> Accepted';
+                acceptBtn.classList.remove('bg-primary', 'hover:bg-primary-dark');
+                acceptBtn.classList.add('bg-green-500', 'hover:bg-green-600');
+                acceptBtn.disabled = true;
+            });
+            
+            closeAcceptanceModal.addEventListener('click', () => {
+                acceptanceModal.classList.add('hidden');
+            });
+            
+            // Check if already accepted
+            if (localStorage.getItem('legalAccepted') === 'true') {
+                acceptBtn.innerHTML = '<i class="fas fa-check-circle mr-2"></i> Already Accepted';
+                acceptBtn.classList.remove('bg-primary', 'hover:bg-primary-dark');
+                acceptBtn.classList.add('bg-green-500', 'hover:bg-green-600');
+                acceptBtn.disabled = true;
+            }
+            
+            // Highlight current section on page load
+            const hash = window.location.hash;
+            if (hash) {
+                const targetElement = document.querySelector(hash);
+                if (targetElement) {
+                    setTimeout(() => {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Update active nav link
+                        document.querySelectorAll('.nav-link').forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === hash) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }, 500);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
